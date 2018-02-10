@@ -18,3 +18,4 @@ errores
 
 git config --global push.default matching
 
+Nota: Cuando no hacemos pull y creamos archivos propios, debemos de hacer merge
