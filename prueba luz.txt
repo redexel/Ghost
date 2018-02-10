@@ -1,0 +1,20 @@
+antes de hacer de hacer cual quier cosa
+git pull
+
+segundo
+preparar para subir varios archivos
+
+git add *
+
+tercero comentarios logicos....
+
+git commit -m "Los cambios que hice"
+
+cuarto para subir o actualizar
+
+git push
+
+errores
+
+git config --global push.default matching
+
