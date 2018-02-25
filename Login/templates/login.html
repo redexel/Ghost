@@ -360,14 +360,13 @@ Animation Keyframes
 </div> 
 <section class="stark-login">
   
-  <form action="" method="">	
-    <div id="fade-box">
-      <input type="text" name="username" id="username" placeholder="Username" required>
-        <input type="password" placeholder="Password" required>
-          
-          <button>Log In</button> 
+	<form action="{{ url_for('login')}}" method="post">	
+	    <div id="fade-box">
+	      	<input type="text" name="username" id="username" placeholder="Username" required>
+	        <input type="password" name="password" placeholder="Password" required>
+	        <input type="submit" value="Log In"> 
         </div>
-      </form>
+   	</form>
       <div class="hexagons">
         <span>&#x2B22;</span>
         <span>&#x2B22;</span>
