@@ -8,7 +8,7 @@ git add *
 
 tercero comentarios logicos....
 
-git commit -m "Los cambios que hice"
+git commit -m "Los cambios que hice2"
 
 cuarto para subir o actualizar
 
@@ -18,4 +18,3 @@ errores
 
 git config --global push.default matching
 
-Nota: Cuando no hacemos pull y creamos archivos propios, debemos de hacer merge
