@@ -21,6 +21,7 @@ class Users(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(30), unique=True, nullable=False)
 	password = db.Column(db.String(80), nullable=False)
+	profile = db.Column(db.Integer, nullable=False)
 	
 
 @app.route('/', methods=["GET", "POST"])
@@ -38,7 +39,7 @@ def login():
 def signup():
 	if request.method == "POST":	
 		hashed_pw = generate_password_hash(request.form["password"], method="sha256")
-		new_user = Users(username=request.form["username"], password=hashed_pw)
+		new_user = Users(username=request.form["username"], password=hashed_pw, profile=request.form["profile"])
 		db.session.add(new_user)
 		db.session.commit()
 		return "Has sido registrado correctamente"
@@ -47,7 +48,7 @@ def signup():
 @app.route('/dashboard')
 def dashboard():
 	if session:
-		return render_template("index.html")
+		return render_template("dashboard.html")
 	return redirect("/error")
 
 @app.route('/error')
@@ -58,4 +59,4 @@ def error():
 	
 if __name__=='__main__':
 	db.create_all()
-	app.run(debug=True, host='0.0.0.0')
+	app.run(debug = True, port = 5000)
