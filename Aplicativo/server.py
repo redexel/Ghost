@@ -26,10 +26,10 @@ class Users(db.Model):
 class Scan(db.Model):
 	id_scan = db.Column(db.Integer, primary_key=True)
 	ssid = db.Column(db.String(50),  nullable=False)
-	canal = db.Column(db.String(50),  nullable=False)
-	cifrado = db.Column(db.String(50), nullable=False)
-	clave = db.Column(db.String(50),  nullable=False)
-	fecha = db.Column(db.String(50), nullable=False)
+	channel = db.Column(db.String(50),  nullable=False)
+	encryption = db.Column(db.String(50), nullable=False)
+	ssid_password = db.Column(db.String(50),  nullable=False)
+	date = db.Column(db.String(50), nullable=False)
 	id_user1 = db.Column(db.Integer, nullable=False)
 	
 
