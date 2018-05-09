@@ -18,10 +18,19 @@ app.secret_key = 'esto-es-una-clave-muy-secreta'
 
 
 class Users(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
+	id_user = db.Column(db.Integer, primary_key=True)
 	username = db.Column(db.String(30), unique=True, nullable=False)
 	password = db.Column(db.String(80), nullable=False)
 	profile = db.Column(db.Integer, nullable=False)
+
+class Scan(db.Model):
+	id_scan = db.Column(db.Integer, primary_key=True)
+	ssid = db.Column(db.String(50),  nullable=False)
+	canal = db.Column(db.String(50),  nullable=False)
+	cifrado = db.Column(db.String(50), nullable=False)
+	clave = db.Column(db.String(50),  nullable=False)
+	fecha = db.Column(db.String(50), nullable=False)
+	id_user1 = db.Column(db.Integer, nullable=False)
 	
 
 @app.route('/', methods=["GET", "POST"])
