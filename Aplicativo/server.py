@@ -5,12 +5,14 @@ from flask import Flask, render_template, redirect, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import request
+from flask import json
 
 import os
 
+
 dbdir = "sqlite:///" + os.path.abspath(os.getcwd()) + "/database.db"
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path="/")
 app.config["SQLALCHEMY_DATABASE_URI"] = dbdir
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
@@ -54,15 +56,46 @@ def signup():
 		return "Has sido registrado correctamente"
 	return render_template("signup.html")	
 
-@app.route('/dashboard')
+@app.route('/dashboard' , methods=["GET", "POST"])
 def dashboard():
 	if session:
 		return render_template("dashboard.html")
 	return redirect("/error")
 
+@app.route('/results')	
+def results():
+	if session:
+		data=[]
+		with open('cracked.csv','r') as f:
+			for i in f.readlines():
+				row=i.split(',')
+				target=dict()
+				target['BSSID']=row[0]
+				target['CIPHER']=row[1]
+				target['ESSID']=row[2]
+				target['PASSWORD']=row[3]
+				data.append(target)
+		return app.response_class(
+			response=json.dumps(data),
+			status=200,
+			mimetype="application/json"
+		)
+		
+		 	
+	#return redirect("/error")
+
 @app.route('/error')
 def error():
 	return render_template("error.html")
+
+@app.route('/tabla')
+def tabla():
+	return render_template("tabla.html")
+
+@app.route('/tables')
+def tables():
+	return render_template("tables.html")
+
 
 
 	

@@ -2,6 +2,7 @@
 <html lang="en">
  
 <head>
+ 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -84,7 +85,7 @@
      
     </div>
     <div class="col-sm">
-      <button type="button" name="load_data" id="load_data" class="btn btn-info">Load Data</button>
+      <button type="button" name="load" id="load_data" class="btn btn-info">Load Data</button>
       
     </div>
     <div class="col-sm">
@@ -143,11 +144,13 @@
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
-     <script>
+
+
+   <script>
 $(document).ready(function(){
  $('#load_data').click(function(){
   $.ajax({
-   url:"employee.csv", // RUTA RELATIVA O ABSOLUTA
+   url:"employeed.csv", // RUTA RELATIVA O ABSOLUTA
    dataType:"text",
    success:function(data)
    {
@@ -177,7 +180,9 @@ $(document).ready(function(){
  });
  
 });
-</script>
+</script> 
+
+
   </div>
  
 </body>
