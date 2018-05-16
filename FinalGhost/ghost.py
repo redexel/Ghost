@@ -125,8 +125,9 @@ class RunConfiguration:
             self.WPA_DICTIONARY = '/usr/share/fuzzdb/wordlists-user-passwd/passwds/phpbb.txt'
         elif os.path.exists('/usr/share/wordlists/fern-wifi/common.txt'):
             self.WPA_DICTIONARY = '/usr/share/wordlists/fern-wifi/common.txt'
-        else:
-            self.WPA_DICTIONARY = '/home/redexel/Ghost/Aplicativo/dict.lst'
+        elif os.path.exists('/home/redexel/Ghost/FinalGhost/dict.lst'):
+            self.WPA_DICTIONARY = '/home/redexel/Ghost/FinalGhost/dict.lst'
+        
 
         # Various programs to use when checking for a four-way handshake.
         # True means the program must find a valid handshake in order for ghost to recognize a handshake.
