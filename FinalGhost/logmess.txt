@@ -1,0 +1,8 @@
+[31m
+ (^C)[33m WPA handshake capture interrupted [0m 2018-05-14 19:24:36.682301
+
+[31m
+ (^C)[33m WPA handshake capture interrupted [0m 2018-05-14 19:41:01.051616
+
+[31m
+ (^C)[33m WPA handshake capture interrupted [0m 2018-05-14 22:56:12.660961

@@ -1,0 +1,15 @@
+ghost=Flask(__name__, template_folder='templates/')
+
+
+@app.route('/insert/default')
+def insert_default():
+	new.post = Posts(title="Default Title")
+	db.session.add(new_post)
+	db.session.commit()
+	return "The default post was created."
+
+@app.route('/select/default')
+def select_default():
+	post = Posts.query.filter_by(id="50").first()
+	print(post.id)
+	return "Query Done."
