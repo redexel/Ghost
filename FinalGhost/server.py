@@ -183,11 +183,11 @@ def tables():
 
 @app.route('/commands', methods=["GET", "POST"])
 def commands():
-	if session:
+	
 
 		if request.method=="POST":
 			os.system('sudo python ghost.py --aircrack -dict dict.lst')
-	return redirect("/error")
+	
 
 	
 if __name__=='__main__':
