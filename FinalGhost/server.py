@@ -4,15 +4,9 @@
 from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-<<<<<<< HEAD
-from flask import request
-from flask import json
-
-=======
 from flask import make_response
 from flask import Flask, Response, request, session, url_for, redirect, json
 import base64
->>>>>>> 1601613651dc3a1d99825233f0c8e4f51da249d0
 import os
 
 
@@ -61,16 +55,10 @@ def signup():
 		db.session.add(new_user)
 		db.session.commit()
 		return "Has sido registrado correctamente"
-<<<<<<< HEAD
-	return render_template("signup.html")	
-
-@app.route('/dashboard' , methods=["GET", "POST"])
-=======
 		return render_template("signup.html")
 	return redirect("/error")
 
 @app.route("/dashboard" , methods=["GET", "POST"])
->>>>>>> 1601613651dc3a1d99825233f0c8e4f51da249d0
 def dashboard():
 	if session:
 		return Response('''
@@ -170,10 +158,7 @@ def results():
 				target['CIPHER']=row[1]
 				target['ESSID']=row[2]
 				target['PASSWORD']=row[3]
-<<<<<<< HEAD
-=======
 				target['WPS']=row[4]
->>>>>>> 1601613651dc3a1d99825233f0c8e4f51da249d0
 				data.append(target)
 		return app.response_class(
 			response=json.dumps(data),
@@ -196,9 +181,6 @@ def tabla():
 def tables():
 	return render_template("tables.html")
 
-<<<<<<< HEAD
-
-=======
 @app.route('/commands', methods=["GET", "POST"])
 def commands():
 	if session:
@@ -206,7 +188,6 @@ def commands():
 		if request.method=="POST":
 			os.system('sudo python ghost.py --aircrack -dict dict.lst')
 	return redirect("/error")
->>>>>>> 1601613651dc3a1d99825233f0c8e4f51da249d0
 
 	
 if __name__=='__main__':
