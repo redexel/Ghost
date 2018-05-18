@@ -11,19 +11,35 @@
 </head>
 <body>
 
+
+					<nav>
+						<div class="nav-wrapper blue lighten-1">
+						  <a href="dashboard" class="brand-logo" style='margin-left: 10px;'>Dashboard</a>
+						  <ul id="nav-mobile" class="right hide-on-med-and-down">
+							<li></li>
+							<li><a href="logout" ><i class='fa fa-sign-out fa-2x'></i></a></li>
+						  </ul>
+						</div>
+					</nav>
+					<div class='row' '''+ style +'''>
+						<div class='col-md-8 offset-2 text-center'>
+							<h4 class='grey-text'>Results</h4>
+
+
 <table id="userTable" 
 data-url="results" 
 data-show-refresh="true"
-data-height="300"
+data-height="500"
 data-search="true"
-class='table table-striped'>
+class='table'>
 <thead>
 <tr>
-<th data-field="id" data-formatter="table.tools" data-width="200"></th>
+<th data-field="id" data-formatter="table.tools" data-width="0"></th>
 <th data-field="BSSID">BSSID</th>
 <th data-field="CIPHER">CIPHER</th>
 <th data-field="ESSID">ESSID</th>
 <th data-field="PASSWORD">PASSWORD</th>
+<th data-field="WPS">WPS</th>
 </tr>
 </thead>
 </table>
