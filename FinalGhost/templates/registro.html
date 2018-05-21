@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Registro</title>
+		<style type=text/css>{{ get_resource_as_string('static/css/estiloregistro.css') }}</style>
+	</head>
+	<body>
+		<h1>Formulario de registro</h1>
+		<form method="post" action="{{ url_for('signup')}}" class="form-register">
+			<H2 class="form-titulo">Crear una cuenta</H2>
+			<div class="contenedor-inputs">
+				<input type="text" name="username" placeholder="Usuario" class="input-55">
+				<input type="password" name="password" placeholder="Contraseña" class="input-55">
+				<input type="text" name="profile" placeholder="Perfil" class="input-55">
+				<input type="submit" value="Registrar" class="btn-enviar" class="input-50">
+				
+			</div>
+		</form>
+	</body>
+</html>
+

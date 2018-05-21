@@ -34,6 +34,12 @@ class Scan(db.Model):
 	date = db.Column(db.String(50), nullable=False)
 	id_user1 = db.Column(db.Integer, nullable=False)
 	
+def get_resource_as_string(name, charset='utf-8'):
+    with app.open_resource(name) as f:
+        return f.read().decode(charset)
+
+app.jinja_env.globals['get_resource_as_string'] = get_resource_as_string
+
 
 @app.route('/', methods=["GET", "POST"])
 def login():
@@ -55,7 +61,7 @@ def signup():
 		db.session.add(new_user)
 		db.session.commit()
 		return "Has sido registrado correctamente"
-		return render_template("signup.html")
+		return render_template("registro.html")
 	return redirect("/error")
 
 @app.route("/dashboard" , methods=["GET", "POST"])
