@@ -60,7 +60,7 @@ def signup():
 		new_user = Users(username=request.form["username"], password=hashed_pw, profile=request.form["profile"])
 		db.session.add(new_user)
 		db.session.commit()
-		return "Has sido registrado correctamente"
+		return redirect("/dashboard")
 	return render_template("registro.html")
 	
 
