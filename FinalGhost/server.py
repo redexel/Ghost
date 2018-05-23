@@ -197,7 +197,7 @@ def commands():
 	
 
 		if request.method=="POST":
-			os.system('sudo python ghost.py --aircrack -dict dict.lst')
+			os.system('xterm -title "Start Audit Wifi Network" -e sudo python ghost.py --aircrack -dict dict.lst')
 	
 	
 if __name__=='__main__':
