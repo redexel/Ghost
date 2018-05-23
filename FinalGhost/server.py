@@ -53,6 +53,10 @@ def login():
 		return "Tus credenciales son invalidas,revisa e intenta nuevamente"
 	return render_template('login.html')
 
+@app.route('/salir', methods=["GET", "POST"])
+def salir():
+	return redirect("/")	
+
 @app.route('/signup', methods=["GET", "POST"])
 def signup():
 	if request.method == "POST":	
@@ -89,7 +93,7 @@ def dashboard():
 							<li></li>
 							<li><input type="button" name="Attack" value="Attack" class="btn btn-danger" onclick="commands_attacks()">
 							<li><input type="button" name="Attack" value="Crear nuevo usuario" class="btn btn-danger" onclick="location.href='http://127.0.0.1:5000/signup';">
-							<li><a href="logout" ><i class='fa fa-sign-out fa-2x'></i></a></li>
+							<li><a href="#" onclick="location.href='http://127.0.0.1:5000/salir';"><i class='fa fa-sign-out fa-2x'></i></a></li>
 						  </ul>
 						</div>
 					</nav>
