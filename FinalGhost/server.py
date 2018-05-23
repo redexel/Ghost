@@ -50,7 +50,7 @@ def login():
 			session['logueado'] = "si"
 			session['userlogueado'] = request.form["username"]
 			return redirect("/dashboard")
-		return "Tus credenciales son invalidas,revisa e intenta nuevamente"
+		return redirect("/error")
 	return render_template('login.html')
 
 @app.route('/salir', methods=["GET", "POST"])
@@ -182,7 +182,7 @@ def results():
 
 @app.route('/error')
 def error():
-	return render_template("error.html")
+	return render_template("error403.html")
 
 @app.route('/tabla')
 def tabla():
