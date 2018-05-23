@@ -92,7 +92,7 @@ def dashboard():
 						  <ul id="nav-mobile" class="right hide-on-med-and-down">
 							<li></li>
 							<li><input type="button" name="Attack" value="Attack" class="btn btn-danger" onclick="commands_attacks()">
-							<li><input type="button" name="Attack" value="Crear nuevo usuario" class="btn btn-danger" onclick="location.href='http://127.0.0.1:5000/signup';">
+							<li><input type="button" name="Attack" value="Create a new account" class="btn btn-danger" onclick="location.href='http://127.0.0.1:5000/signup';">
 							<li><a href="#" onclick="location.href='http://127.0.0.1:5000/salir';"><i class='fa fa-sign-out fa-2x'></i></a></li>
 						  </ul>
 						</div>
